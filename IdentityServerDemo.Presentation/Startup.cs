@@ -20,6 +20,12 @@ namespace IdentityServerDemo.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.RegisterServiceBLL(_configuration);
+
+            services.AddIdentityServer()
+            .AddDeveloperSigningCredential()
+            .AddInMemoryApiResources(Config.Config.GetApiResources())
+            .AddInMemoryClients(Config.Config.GetClients());
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -28,6 +34,9 @@ namespace IdentityServerDemo.Presentation
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseIdentityServer();
+
 
             app.UseRouting();
 
