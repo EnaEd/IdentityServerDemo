@@ -1,4 +1,5 @@
 ﻿using IdentityModel.Client;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -37,7 +38,30 @@ namespace ConsoleClientForIdentityServer
 
                 Console.WriteLine(tokenResponse.Json);
 
+                var apiClient = new HttpClient();
+                apiClient.SetBearerToken(tokenResponse.AccessToken);
+
+                var response = await apiClient.GetAsync("https://localhost:44390/identity");
+                if (!response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("-------------------------------------------\n not ok\n---------------------------");
+                    Console.WriteLine(response.StatusCode);
+                }
+                else
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine("-------------------------------------------\n Ok\n---------------------------");
+                    Console.WriteLine(JArray.Parse(content));
+                }
+
+
+
             }).Wait();
+
+
+
+
+
         }
     }
 }
