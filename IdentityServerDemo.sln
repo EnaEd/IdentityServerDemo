@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientXamarin", "ClientXama
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerAPIDemo", "IdentityServerAPIDemo\IdentityServerAPIDemo.csproj", "{C48168CB-1907-48E7-8C09-A047BAFC8866}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleClient", "ConsoleClient", "{3E30470F-B74D-40A1-A16B-44B9C28F6964}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClientForIdentityServer", "ConsoleClientForIdentityServer\ConsoleClientForIdentityServer.csproj", "{54AC4260-F77E-441F-A070-DEC399364BA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,12 +43,17 @@ Global
 		{C48168CB-1907-48E7-8C09-A047BAFC8866}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C48168CB-1907-48E7-8C09-A047BAFC8866}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C48168CB-1907-48E7-8C09-A047BAFC8866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54AC4260-F77E-441F-A070-DEC399364BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54AC4260-F77E-441F-A070-DEC399364BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54AC4260-F77E-441F-A070-DEC399364BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54AC4260-F77E-441F-A070-DEC399364BA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C48168CB-1907-48E7-8C09-A047BAFC8866} = {14282243-9DEE-41A4-9D97-ED398AE63699}
+		{54AC4260-F77E-441F-A070-DEC399364BA2} = {3E30470F-B74D-40A1-A16B-44B9C28F6964}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D093DE6-125F-4C4F-94A9-E5AF5930AFE7}

@@ -5,7 +5,11 @@ namespace IdentityServerDemo.Presentation.Config
 {
     public static class Config
     {
-
+        public static IEnumerable<ApiScope> ApiScopes =>
+            new List<ApiScope>
+            {
+                new ApiScope("api1", "My API")
+            };
         public static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource>

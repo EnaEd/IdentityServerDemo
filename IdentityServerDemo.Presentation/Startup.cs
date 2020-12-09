@@ -23,8 +23,10 @@ namespace IdentityServerDemo.Presentation
 
             services.AddIdentityServer()
             .AddDeveloperSigningCredential()
-            .AddInMemoryApiResources(Config.Config.GetApiResources())
+            .AddInMemoryApiScopes(Config.Config.ApiScopes)
             .AddInMemoryClients(Config.Config.GetClients());
+
+
 
         }
 
@@ -34,6 +36,11 @@ namespace IdentityServerDemo.Presentation
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder =>
+            builder.AllowAnyOrigin()
+           .AllowAnyHeader()
+           .AllowAnyMethod());
 
             app.UseIdentityServer();
 
