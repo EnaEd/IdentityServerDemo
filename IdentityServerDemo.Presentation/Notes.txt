@@ -1,0 +1,13 @@
+﻿--Base on documentation : https://identityserver4.readthedocs.io/en/latest/quickstarts/5_entityframework.html / version latest--
+
+--for creating db which depend from migration  like like in this project need to install dotnet global
+cmd>
+dotnet tool install --global dotnet-ef
+
+--invoke this commands in project directory
+cmd>
+dotnet ef migrations add InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/IdentityServer/PersistedGrantDb
+dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDb
+
+
+
