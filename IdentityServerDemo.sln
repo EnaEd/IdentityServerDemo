@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerDemo.Presentation", "IdentityServerDemo.Presentation\IdentityServerDemo.Presentation.csproj", "{FD4404EE-0A14-497F-8429-2091F757FFC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerDemo.Presentation", "IdentityServerDemo.Presentation\IdentityServerDemo.Presentation.csproj", "{FD4404EE-0A14-497F-8429-2091F757FFC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerDemo.DAL", "IdentityServerDemo.DAL\IdentityServerDemo.DAL.csproj", "{AF26906F-2670-4EDC-9FE7-187AF2EA33A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerDemo.DAL", "IdentityServerDemo.DAL\IdentityServerDemo.DAL.csproj", "{AF26906F-2670-4EDC-9FE7-187AF2EA33A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerDemo.BLL", "IdentityServerDemo.BLL\IdentityServerDemo.BLL.csproj", "{9A025726-6386-4FDA-8134-82AD849BC4DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerDemo.BLL", "IdentityServerDemo.BLL\IdentityServerDemo.BLL.csproj", "{9A025726-6386-4FDA-8134-82AD849BC4DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{14282243-9DEE-41A4-9D97-ED398AE63699}"
 EndProject
@@ -15,11 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientBlazorWasm", "ClientB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientXamarin", "ClientXamarin", "{0F255290-1EDE-4698-A91B-B483B4F5467F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerAPIDemo", "IdentityServerAPIDemo\IdentityServerAPIDemo.csproj", "{C48168CB-1907-48E7-8C09-A047BAFC8866}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerAPIDemo", "IdentityServerAPIDemo\IdentityServerAPIDemo.csproj", "{C48168CB-1907-48E7-8C09-A047BAFC8866}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleClient", "ConsoleClient", "{3E30470F-B74D-40A1-A16B-44B9C28F6964}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClientForIdentityServer", "ConsoleClientForIdentityServer\ConsoleClientForIdentityServer.csproj", "{54AC4260-F77E-441F-A070-DEC399364BA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClientForIdentityServer", "ConsoleClientForIdentityServer\ConsoleClientForIdentityServer.csproj", "{54AC4260-F77E-441F-A070-DEC399364BA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorUIIS4Demo", "BlazorUIIS4Demo\BlazorUIIS4Demo.csproj", "{76005675-A0B5-4991-B0D6-6E32C67684C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{54AC4260-F77E-441F-A070-DEC399364BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54AC4260-F77E-441F-A070-DEC399364BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54AC4260-F77E-441F-A070-DEC399364BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76005675-A0B5-4991-B0D6-6E32C67684C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76005675-A0B5-4991-B0D6-6E32C67684C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76005675-A0B5-4991-B0D6-6E32C67684C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76005675-A0B5-4991-B0D6-6E32C67684C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
