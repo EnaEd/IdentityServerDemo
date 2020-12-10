@@ -26,6 +26,8 @@ namespace IdentityServerAPIDemo
 
             services.AddControllers();
 
+
+
             services.AddAuthentication("Bearer")
            .AddJwtBearer("Bearer", options =>
            {
@@ -36,6 +38,17 @@ namespace IdentityServerAPIDemo
                    ValidateAudience = false
                };
            });
+
+            //without this api get access for any token from my IS4
+            //for defferent strategy where we additional check area in token which we ask
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ApiScope", policy =>
+                {
+                    policy.RequireAuthenticatedUser();
+                    policy.RequireClaim("scope", "api1");
+                });
+            });
 
             services.AddSwaggerGen(c =>
             {
