@@ -29,8 +29,8 @@ namespace IdentityServerAPIDemo
             services.AddAuthentication("Bearer")
            .AddJwtBearer("Bearer", options =>
            {
-               options.Authority = "https://localhost:5001";
-
+               options.Authority = "http://localhost:5000";
+               options.RequireHttpsMetadata = false;
                options.TokenValidationParameters = new TokenValidationParameters
                {
                    ValidateAudience = false

@@ -25,6 +25,7 @@ namespace IdentityServerDemo.Presentation
             services.RegisterServiceBLL(_configuration);
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
             services.AddIdentityServer()
+                .AddDeveloperSigningCredential()
             //.AddTestUsers(TestUsers)
             .AddConfigurationStore(options =>
                 options.ConfigureDbContext = builder => builder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"),
