@@ -30,6 +30,16 @@ a, .btn-link {
     color: red;
 }
 
+.middle-box {
+    margin: auto;
+    margin-top: 150px;
+    width: 450px;
+    padding: 30px;
+    box-shadow: 5px 10px 18px #888888;
+    border-radius: 20px;
+}
+
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
