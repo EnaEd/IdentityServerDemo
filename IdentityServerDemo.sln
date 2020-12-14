@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClientForIdentitySer
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientBlazorServer", "ClientBlazorServer", "{F5AFA5FC-3EC0-466B-9799-9F5B50275577}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientBlazor.Server", "ClientBlazor.Server\ClientBlazor.Server.csproj", "{AD104363-340F-40AB-8A9C-E9EBF2AA4B50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientBlazor.Server", "ClientBlazor.Server\ClientBlazor.Server.csproj", "{AD104363-340F-40AB-8A9C-E9EBF2AA4B50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientBlazor.Wasm", "ClientBlazor.Wasm\ClientBlazor.Wasm.csproj", "{E30A0350-7432-4CE3-8D5B-224ADF581114}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{AD104363-340F-40AB-8A9C-E9EBF2AA4B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD104363-340F-40AB-8A9C-E9EBF2AA4B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD104363-340F-40AB-8A9C-E9EBF2AA4B50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E30A0350-7432-4CE3-8D5B-224ADF581114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E30A0350-7432-4CE3-8D5B-224ADF581114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E30A0350-7432-4CE3-8D5B-224ADF581114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E30A0350-7432-4CE3-8D5B-224ADF581114}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{C48168CB-1907-48E7-8C09-A047BAFC8866} = {14282243-9DEE-41A4-9D97-ED398AE63699}
 		{54AC4260-F77E-441F-A070-DEC399364BA2} = {3E30470F-B74D-40A1-A16B-44B9C28F6964}
 		{AD104363-340F-40AB-8A9C-E9EBF2AA4B50} = {F5AFA5FC-3EC0-466B-9799-9F5B50275577}
+		{E30A0350-7432-4CE3-8D5B-224ADF581114} = {5F85F28E-72BA-48FF-8CE7-99DFB21B91D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D093DE6-125F-4C4F-94A9-E5AF5930AFE7}
