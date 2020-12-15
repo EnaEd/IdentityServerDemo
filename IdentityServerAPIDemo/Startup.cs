@@ -26,7 +26,7 @@ namespace IdentityServerAPIDemo
 
             services.AddControllers();
 
-
+            services.AddCors();
 
             services.AddAuthentication("Bearer")
            .AddJwtBearer("Bearer", options =>
@@ -72,6 +72,8 @@ namespace IdentityServerAPIDemo
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()/*.WithOrigins("http://localhost:4200")*/);
 
             app.UseEndpoints(endpoints =>
             {

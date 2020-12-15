@@ -13,5 +13,13 @@ namespace IdentityServerAPIDemo.Controllers
         {
             return new JsonResult(User.Claims.ToList().Select(x => new { x.Type, x.Value }));
         }
+
+        [HttpGet("api/items")]
+        [AllowAnonymous]
+        public IActionResult GetItems()
+        {
+            return Ok(new TestModel());
+
+        }
     }
 }
