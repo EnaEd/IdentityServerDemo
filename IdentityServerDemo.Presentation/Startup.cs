@@ -1,9 +1,6 @@
 ﻿using IdentityServerDemo.BLL;
-using IdentityServerDemo.Presentation.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,21 +19,28 @@ namespace IdentityServerDemo.Presentation
 
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddControllersWithViews();
+
             services.RegisterServiceBLL(_configuration);
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
-            //.AddTestUsers(TestUsers)
-            .AddConfigurationStore(options =>
-                options.ConfigureDbContext = builder => builder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"),
-                  sql => sql.MigrationsAssembly(migrationsAssembly)))
 
-            .AddOperationalStore(options =>
-            options.ConfigureDbContext = builder => builder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"),
-                    sql => sql.MigrationsAssembly(migrationsAssembly)));
+            //.AddConfigurationStore(options =>
+            //    options.ConfigureDbContext = builder => builder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"),
+            //      sql => sql.MigrationsAssembly(migrationsAssembly)))
+
+            //.AddOperationalStore(options =>
+            //options.ConfigureDbContext = builder => builder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"),
+            //        sql => sql.MigrationsAssembly(migrationsAssembly)));
 
             //.AddInMemoryApiScopes(Config.Config.ApiScopes)
-            //.AddInMemoryClients(Config.Config.GetClients());
+            .AddInMemoryIdentityResources(Config.Config.Ids)
+            .AddInMemoryApiResources(Config.Config.Apis)
+            .AddInMemoryClients(Config.Config.Clients)
+            .AddTestUsers(Config.Config.Users);
+
 
 
 
@@ -49,24 +53,24 @@ namespace IdentityServerDemo.Presentation
                 app.UseDeveloperExceptionPage();
             }
 
-            app.InitializeDatabase();
+            //app.InitializeDatabase();
 
             app.UseCors(builder =>
             builder.AllowAnyOrigin()
            .AllowAnyHeader()
            .AllowAnyMethod());
 
-            app.UseIdentityServer();
 
 
+            app.UseStaticFiles();
             app.UseRouting();
+
+            app.UseIdentityServer();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }

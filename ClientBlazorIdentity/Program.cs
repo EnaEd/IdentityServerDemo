@@ -24,7 +24,7 @@ namespace ClientBlazorIdentity
                 options.ProviderOptions.ResponseType = "code";
                 options.ProviderOptions.DefaultScopes.Add("profile");
                 options.ProviderOptions.DefaultScopes.Add("openid");
-                options.ProviderOptions.DefaultScopes.Add("api");
+                //options.ProviderOptions.DefaultScopes.Add("api");
             });
 
             await builder.Build().RunAsync();

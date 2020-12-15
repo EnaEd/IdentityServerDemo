@@ -20,7 +20,7 @@ namespace IdentityServerDemo.Presentation.Extensions
 
                 if (!context.Clients.Any())
                 {
-                    Config.Config.GetClients().ToList().ForEach(client => context.Clients.Add(client.ToEntity()));
+                    Config.Config.Clients.ToList().ForEach(client => context.Clients.Add(client.ToEntity()));
                     context.SaveChanges();
                 }
 
