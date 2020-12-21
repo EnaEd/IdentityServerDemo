@@ -1,16 +1,50 @@
 ﻿@page "/counter"
+<p>Here must be a token</p>
+<br />
+<label>Date of birth = @DateOfBirth.ToString("MMMM d, yyyy")</label><font></font>
+<input @bind-value=DateOfBirth @bind-value:format="yyyy-MM-dd" />
 
-<h1>Counter</h1>
+<EditForm Model="ModelTest" OnSubmit="Test">
+    <InputDate @bind-Value="ModelTest.Date" DisplayName="enterDate" />
+</EditForm>
 
-<p>Current count: @currentCount</p>
+<p>"@currentCount</p>
+<button @onclick="(args => currentCount++)">Count up</button>
+<ClientBlazorIdentity.Pages.Components.PartCounter @bind-CurrentCounterValue="currentCount" />
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<input readonly="@true" disbabled="@false" value="testval" />
 
-@code {
-    private int currentCount = 0;
+<label>@Token </label>
+<p>tes2</p>
+<label @bind-value="@Token" @bind-value:event="onchange"></label>
+<input type="text" @bind-value="test" />
+<p>@test</p>
 
-    private void IncrementCount()
+<br />
+
+<ClientBlazorIdentity.Pages.Components.ChildComponent first="consumer-value-1" second="consumer-value-2" />
+
+<ClientBlazorIdentity.Pages.Components.Collapsible>Hello World!</ClientBlazorIdentity.Pages.Components.Collapsible>
+
+@code { [Parameter]
+    public string Src { get; set; }
+
+    [Parameter]
+    public string Alt { get; set; }
+    public int currentCount { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public BlazoredModel ModelTest { get; set; }
+    public void Test()
     {
-        currentCount++;
+
     }
-}
+
+    public class BlazoredModel
+    {
+        public DateTime Date { get; set; }
+    }
+
+    protected override bool ShouldRender()
+    {
+        return base.ShouldRender();
+    } }

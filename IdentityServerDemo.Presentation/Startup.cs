@@ -1,5 +1,4 @@
-﻿using IdentityServerDemo.BLL;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +21,6 @@ namespace IdentityServerDemo.Presentation
 
             services.AddControllersWithViews();
 
-            services.RegisterServiceBLL(_configuration);
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
@@ -35,9 +33,9 @@ namespace IdentityServerDemo.Presentation
             //options.ConfigureDbContext = builder => builder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"),
             //        sql => sql.MigrationsAssembly(migrationsAssembly)));
 
-            //.AddInMemoryApiScopes(Config.Config.ApiScopes)
+            .AddInMemoryApiScopes(Config.Config.ApiScopes)
             .AddInMemoryIdentityResources(Config.Config.Ids)
-            .AddInMemoryApiResources(Config.Config.Apis)
+            //.AddInMemoryApiResources(Config.Config.Apis)
             .AddInMemoryClients(Config.Config.Clients)
             .AddTestUsers(Config.Config.Users);
 

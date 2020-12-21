@@ -45,7 +45,7 @@ namespace IdentityServerAPIDemo
             {
                 options.AddPolicy("ApiScope", policy =>
                 {
-                    policy.RequireAuthenticatedUser();
+                    //policy.RequireAuthenticatedUser(); //always auth user
                     policy.RequireClaim("scope", "api1");
                 });
             });
@@ -73,7 +73,7 @@ namespace IdentityServerAPIDemo
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()/*.WithOrigins("http://localhost:4200")*/);
+            app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()/*.WithOrigins("https://localhost:5001")*/);
 
             app.UseEndpoints(endpoints =>
             {

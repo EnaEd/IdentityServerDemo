@@ -13,7 +13,7 @@ namespace ClientBlazorIdentity
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:44390/") });
 
             builder.Services.AddOidcAuthentication(options =>
             {
@@ -24,7 +24,9 @@ namespace ClientBlazorIdentity
                 options.ProviderOptions.ResponseType = "code";
                 options.ProviderOptions.DefaultScopes.Add("profile");
                 options.ProviderOptions.DefaultScopes.Add("openid");
-                //options.ProviderOptions.DefaultScopes.Add("api");
+                options.ProviderOptions.DefaultScopes.Add("api1");
+                options.ProviderOptions.DefaultScopes.Add("offline_access");
+
             });
 
             await builder.Build().RunAsync();

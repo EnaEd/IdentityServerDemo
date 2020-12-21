@@ -9,3 +9,24 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+
+<ClientBlazorIdentity.Pages.Components.TabControl>
+
+    <TabTextTemplate>
+        <label>Test</label>@context.Text
+    </TabTextTemplate>
+    <ChildContent>
+        <ClientBlazorIdentity.Pages.Components.TabPage Text="Tab 1">
+            <ClientBlazorIdentity.Pages.Components.ChildComponent />
+        </ClientBlazorIdentity.Pages.Components.TabPage>
+        <ClientBlazorIdentity.Pages.Components.TabPage Text="Tab 2">
+            <ClientBlazorIdentity.Pages.Components.PersonsList Data=@People>
+                @context.Salutation @context.FamilyName @context.GivenName
+            </ClientBlazorIdentity.Pages.Components.PersonsList>
+        </ClientBlazorIdentity.Pages.Components.TabPage>
+        <ClientBlazorIdentity.Pages.Components.TabPage Text="Tab 3">
+            <h1>The third tab2</h1>
+        </ClientBlazorIdentity.Pages.Components.TabPage>
+    </ChildContent>
+</ClientBlazorIdentity.Pages.Components.TabControl>

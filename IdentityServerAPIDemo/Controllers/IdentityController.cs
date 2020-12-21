@@ -8,8 +8,8 @@ namespace IdentityServerAPIDemo.Controllers
     [Authorize]
     public class IdentityController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("api/user")]
+        public IActionResult GetUserClaim()
         {
             return new JsonResult(User.Claims.ToList().Select(x => new { x.Type, x.Value }));
         }

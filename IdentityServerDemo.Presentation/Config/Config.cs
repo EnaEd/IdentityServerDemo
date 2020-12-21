@@ -67,13 +67,14 @@ namespace IdentityServerDemo.Presentation.Config
                     RedirectUris = {"https://localhost:5001/authentication/login-callback"},
                     PostLogoutRedirectUris = {"https://localhost:5001/"},
                     ClientName = "blazor",
+                    AllowOfflineAccess=true, //turn on token
 
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.Email
-                        //"api1"
+                        IdentityServerConstants.StandardScopes.Email,
+                        "api1"
                     }
                 }
             };

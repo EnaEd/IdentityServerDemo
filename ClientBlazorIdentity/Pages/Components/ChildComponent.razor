@@ -1,0 +1,19 @@
+﻿<div first="1" @attributes=AllOtherAttributes second="2">
+    Right-click and inspect the HTML for this element to see the results!
+</div>
+<div>Test reload</div>
+@code
+{ [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> AllOtherAttributes { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        Console.WriteLine("InitAsync");
+        return base.OnInitializedAsync();
+    }
+
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        Console.WriteLine("Set Param async");
+        return base.SetParametersAsync(parameters);
+    } }
